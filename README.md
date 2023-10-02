@@ -15,3 +15,5 @@ npx create-expo-app -e with-router
 -using ios simulator and web browser
 
 -using WeatherApi to get weather data
+
+Links: https://www.weatherapi.com/
