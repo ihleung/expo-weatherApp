@@ -51,7 +51,7 @@ function WeatherComponent() {
   return (
     <View style={{ flex: 1, backgroundColor: "green" }}>
       {/* Set the status bar color to green */}
-      <StatusBar backgroundColor="green" barStyle="light-content" />
+      <StatusBar backgroundColor="green" />
 
       <ScrollView
         contentContainerStyle={{
