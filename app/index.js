@@ -19,7 +19,7 @@ function WeatherComponent() {
   const fetchData = () => {
     setLoading(true);
     fetch(
-      "http://api.weatherapi.com/v1/current.json?key=1e206a1519654771a20150206231909&q=Toronto"
+      "http://api.weatherapi.com/v1/current.json?key=1e206a1519654771a20150206231909&q=Vancouver"
     )
       .then((response) => response.json())
       .then((data) => {
