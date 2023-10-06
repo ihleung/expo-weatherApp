@@ -49,40 +49,35 @@ function WeatherComponent() {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "green" }}>
-      {/* Set the status bar color to green */}
-      <StatusBar backgroundColor="green" />
-
-      <ScrollView
-        contentContainerStyle={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-      >
-        {loading ? (
-          <View style={styles.activityContainer}>
-            <ActivityIndicator size="large" color="#0000ff" />
-          </View>
-        ) : (
-          data.current && (
-            <SafeAreaView style={styles.tempArea}>
-              <Text style={styles.cityName}>{data.location.name}</Text>
-              <Text style={styles.tempText}>{data.current.temp_c}°C</Text>
-              <Text>Humidity: {data.current.humidity}%</Text>
-              <Text>UV Index: {data.current.uv}</Text>
-              <Image
-                style={styles.avatarImage}
-                source={{ uri: "https:" + data.current.condition.icon }}
-              />
-            </SafeAreaView>
-          )
-        )}
-      </ScrollView>
-    </View>
+    <ScrollView
+      contentContainerStyle={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+    >
+      {loading ? (
+        <View style={styles.activityContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      ) : (
+        data.current && (
+          <SafeAreaView style={styles.tempArea}>
+            <Text style={styles.cityName}>{data.location.name}</Text>
+            <Text style={styles.tempText}>{data.current.temp_c}°C</Text>
+            <Text>Humidity: {data.current.humidity}%</Text>
+            <Text>UV Index: {data.current.uv}</Text>
+            <Image
+              style={styles.avatarImage}
+              source={{ uri: "https:" + data.current.condition.icon }}
+            />
+          </SafeAreaView>
+        )
+      )}
+    </ScrollView>
   );
 }
 
